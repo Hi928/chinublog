@@ -4,6 +4,7 @@ import type { GetStaticProps, NextPage } from "next";
 import { detectContentType } from "next/dist/server/image-optimizer";
 import Link from "next/link";
 import { ComponentProps, useState } from "react";
+import { Pagination } from "src/components/Pagination/Pagination";
 import { client } from "src/libs/client";
 
 export type Blog = {
@@ -66,6 +67,7 @@ const Home: NextPage<Props> = (props) => {
           );
         })}
       </ul>
+      <Pagination currentPage={1} totalCount={totalCount} />
     </div>
   );
 };
